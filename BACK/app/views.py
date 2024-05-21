@@ -29,7 +29,7 @@ class UsuarioCustomizadoView(ModelViewSet):
         return queryset
 
 class CategoriaView(ModelViewSet):
-    queryset = Categoria.objects.all() #select *from CategoriaProdutos
+    queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
     
 

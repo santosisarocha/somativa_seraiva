@@ -50,7 +50,7 @@ STATUS = [
 ]
 
 class Livro(models.Model):
-    categoriaFK = models.ForeignKey(Categoria, related_name='livros', on_delete=models.CASCADE)
+    categoriaFK = models.ForeignKey(Categoria, related_name='livroCategoria', on_delete=models.CASCADE)
     titulo = models.CharField(max_length=150)
     preco = models.DecimalField(max_digits=5, decimal_places=2)
     quantidade = models.IntegerField()
@@ -60,7 +60,7 @@ class Livro(models.Model):
     num_pag = models.IntegerField()
     formato = models.CharField(max_length=20, choices=FORMATO)
     num_edicao = models.IntegerField()
-    usuarioFK = models.ForeignKey(UsuarioCustomizado, related_name='livros', on_delete=models.CASCADE)
+    usuarioFK = models.ForeignKey(UsuarioCustomizado, related_name='livroAutor', on_delete=models.CASCADE)
     ano = models.IntegerField()
     status = models.CharField(max_length=20, choices=STATUS)
 
@@ -69,7 +69,7 @@ class Livro(models.Model):
 
 class Emprestimo(models.Model):
     usuarioFK = models.ForeignKey(UsuarioCustomizado, related_name='emprestimos', on_delete=models.CASCADE)
-    dataHora = models.DateTimeField(auto_now_add=True)
+    dataHora = models.DateField(auto_now_add=True)
     dataDevolucao = models.DateField()
     dataDevolvido = models.DateField(null=True, blank=True)
     precoTotal = models.DecimalField(max_digits=5, decimal_places=2)
