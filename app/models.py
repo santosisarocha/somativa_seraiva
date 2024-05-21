@@ -11,6 +11,8 @@ GRUPO_USER = [
 
 class UsuarioCustomizado(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField("endereço de email", unique=True)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     telefone = models.CharField(max_length=15, null=True, blank=True)
     endereco = models.CharField(max_length=200)
     cpf = models.CharField(max_length=20)
@@ -71,7 +73,7 @@ class Emprestimo(models.Model):
     dataDevolucao = models.DateField()
     dataDevolvido = models.DateField(null=True, blank=True)
     precoTotal = models.DecimalField(max_digits=5, decimal_places=2)
-    id_livro = models.ManyToManyField(Livro)
+    livro = models.ManyToManyField(Livro)
 
     def __str__(self):
         return self.usuarioFK.nome
