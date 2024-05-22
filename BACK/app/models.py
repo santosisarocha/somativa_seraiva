@@ -2,13 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, Group, Permission
 from .gerenciador import Gerenciador
 
-GRUPO_USER = [
-    ("AD", "ADMIN"),
-    ("AU", "AUTOR"),
-    ("U", "USUARIO"),
-    ("B", "BIBIOGRAFIA"),
-]
-
 class UsuarioCustomizado(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField("endereço de email", unique=True)
     is_staff = models.BooleanField(default=False)
@@ -16,7 +9,6 @@ class UsuarioCustomizado(AbstractBaseUser, PermissionsMixin):
     telefone = models.CharField(max_length=15, null=True, blank=True)
     endereco = models.CharField(max_length=200)
     cpf = models.CharField(max_length=20)
-    grupo_usuario = models.CharField(max_length=20, choices=GRUPO_USER)
     nome = models.CharField(max_length=150)
     foto = models.CharField(max_length=1000, null=False)
     biografia = models.CharField(max_length=200, null=False)

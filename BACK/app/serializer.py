@@ -12,8 +12,8 @@ class CategoriaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class LivroSerializer(serializers.ModelSerializer):
-    categoriaFK = CategoriaSerializer(read_only=True)  # Use nested serializer
-    usuarioFK = UsuarioCustomizadoSerializer(read_only=True)  # Use nested serializer
+    categoriaFK = CategoriaSerializer(read_only=True)  
+    usuarioFK = UsuarioCustomizadoSerializer(read_only=True)  
 
     class Meta:
         model = Livro
