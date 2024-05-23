@@ -4,13 +4,14 @@ import { type Livro } from '~/models/produtos';
 import { type Ref, ref } from 'vue';
 import { onMounted } from 'vue';
 
-const produtos: Ref<Array<Livro>> = ref([]);
+
+const livros: Ref<Array<Livro>> = ref([]);
 
 
 const atualizarProdutos= () => {
     getProdutos().then((produtosEncontrados) => { 
         console.log("Produtos encontrados:", produtosEncontrados?.results[0].titulo);
-        produtos.value = produtosEncontrados?.results ?? [];
+        livros.value = produtosEncontrados?.results ?? [];
 });
 };
 atualizarProdutos();
@@ -21,8 +22,8 @@ atualizarProdutos();
         <h1>Home</h1>
         <div class="produtos-container grid align-items-center justify-content-center">
 
-            <div v-for="(produto,index) in produtos">
-                <LivroItem :key="index" class="col-4" :produto="produto" />
+            <div v-for="(livro,index) in livros">
+                <ProdutoItem :key="index" class="col-4" :livro="livro" />
             </div>
         
 

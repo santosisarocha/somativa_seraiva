@@ -21,7 +21,7 @@ class CustomModelViewSet(ModelViewSet):
 class UsuarioCustomizadoView(ModelViewSet):
     queryset = UsuarioCustomizado.objects.all()
     serializer_class = UsuarioCustomizadoSerializer
-    permission_classes = (IsAuthenticated,)
+    
 
     def get_queryset(self):
         user = self.request.user
