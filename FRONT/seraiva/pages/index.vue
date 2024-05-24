@@ -10,7 +10,7 @@ const livros: Ref<Array<Livro>> = ref([]);
 
 const atualizarProdutos= () => {
     getProdutos().then((produtosEncontrados) => { 
-        console.log("Produtos encontrados:", produtosEncontrados?.results[0].titulo);
+        console.log("Produtos encontrados:", produtosEncontrados?.results);
         livros.value = produtosEncontrados?.results ?? [];
 });
 };
@@ -22,8 +22,9 @@ atualizarProdutos();
         <h1>Home</h1>
         <div class="produtos-container grid align-items-center justify-content-center">
 
-            <div v-for="(livro,index) in livros">
+            <div v-for="(livro,index) in livros" :key="index">
                 <ProdutoItem :key="index" class="col-4" :livro="livro" />
+                
             </div>
         
 

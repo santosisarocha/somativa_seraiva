@@ -21,7 +21,7 @@ export type Livro ={
    preco: number;
    quantidade: number;
    categoriaFK: CategoriaProduto;
-   fotos: String;
+   foto: string;
    estrelas: number;
    num_pag: number;
    formato: string;

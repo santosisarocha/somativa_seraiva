@@ -15,7 +15,7 @@ console.log("produto recebido", props.livro);
         v-if="props.livro"
         >
             <div class="produto-imagem">
-                <img :src="props.livro.fotos[0]">
+                <img :src="props.livro.foto">
             </div>
             <div>
                 <h4>{{ props.livro.titulo }}</h4>
