@@ -70,6 +70,7 @@ class Emprestimo(models.Model):
     def __str__(self):
         return self.usuarioFK.nome
     
+
 class EmprestimoLivro(models.Model):
      livroFK = models.ForeignKey(Livro, related_name='EmprestimoLivro', on_delete=models.CASCADE)
      quantidade = models.IntegerField()

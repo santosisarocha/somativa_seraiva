@@ -19,14 +19,6 @@ class LivroSerializer(serializers.ModelSerializer):
         model = Livro
         fields = '__all__'
 
-    # def to_representation(self, instance):
-    #     if instance:
-    #         representation = super().to_representation(instance)
-    #         if instance.status == "APROVADO":
-    #             return representation
-    #     else: return None
-
-
 class EmprestimoSerializer(serializers.ModelSerializer):
     livro = serializers.SlugRelatedField(
         many=True,
@@ -39,6 +31,7 @@ class EmprestimoSerializer(serializers.ModelSerializer):
         model = Emprestimo
         fields = '__all__'
 
+
 class EmprestimoLivroSerializer(serializers.ModelSerializer):
     livroFK = LivroSerializer
 
@@ -46,3 +39,4 @@ class EmprestimoLivroSerializer(serializers.ModelSerializer):
         many = True
         model = EmprestimoLivro
         fields = '__all__'
+

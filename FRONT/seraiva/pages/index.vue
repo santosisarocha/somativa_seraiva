@@ -2,7 +2,12 @@
 import {getProdutos} from '~/services/produtos';
 import { type Livro } from '~/models/produtos';
 import { type Ref, ref } from 'vue';
-import { onMounted } from 'vue';
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
+
+const show = () => {
+    toast.add({ severity: 'success', summary: '  Produto Adicionado', detail: 'Acesse-o em seu carrinho', life: 30000 });
+};
 
 
 const livros: Ref<Array<Livro>> = ref([]);
@@ -34,13 +39,13 @@ const toggle = (event: any) => {
             </OverlayPanel>
         </div>
 
+        <Toast />
         <div class="produtos-container grid align-items-center justify-content-center">
 
             <div v-for="(livro,index) in livros" :key="index">
-                <ProdutoItem :key="index" class="col-4" :livro="livro" />
+                <ProdutoItem :key="index" class="col-4" :livro="livro" @eventoAdicionado="show" />
                 
-            </div>
-        
+            </div>       
 
         </div>
     </main>
