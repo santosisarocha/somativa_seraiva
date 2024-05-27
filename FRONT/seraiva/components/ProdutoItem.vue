@@ -45,7 +45,7 @@ const botaoLabel = computed(() => {
                     <span>{{ props.livro.quantidade }}</span>
                 </div>                
             </div>
-            <Rating v-model="props.livro.estrelas" readonly :cancel="false" />
+            <Rating v-model="props.livro.estrelas" readonly class="estrela" :cancel="false" />
             
             <Button @click="adicionarItem" class="botao-add" :label="botaoLabel" />
         </section>
@@ -56,8 +56,8 @@ const botaoLabel = computed(() => {
 .cartao {
     width: 300px;
     max-width: 300px;
-    height: 350px;
-    max-height: 350px;
+    height: 450px;
+    max-height: 450px;
     background-color: rgba(255, 255, 255, 0.63);
     border-radius: 1.5rem;
     margin: 1.5rem;
@@ -73,14 +73,20 @@ const botaoLabel = computed(() => {
         max-width: 250px;
         max-height: 250px;
         img {
+            margin-top: 15px;
+            
+            border-radius: 1.5rem;
             width: 100%;
             height: 100%;
         }
     }
     .botao-add {
-        width: 80%;
-        height: 5rem;
+        width: 70%;
+        height: 4rem;
         margin: 1rem;
+        background-color: rgb(18, 15, 41);
+        border-color: rgb(18, 15, 41);
     }
+    
 }
 </style>

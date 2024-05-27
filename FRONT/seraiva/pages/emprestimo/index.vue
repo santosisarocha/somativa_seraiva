@@ -80,7 +80,7 @@ const salvarPedido = () => {
 
 <template>
   <main class="carrinho-container flex flex-column align-items-center">
-    <h2 class="mt-4 mb-4">🛒 Seu carrinho de compras</h2>
+    <h2 class="text" > Seu carrinho de compras</h2>
     <div class="card flex justify-content-center" v-if="carregando">
       <ProgressSpinner />
     </div>
@@ -123,7 +123,7 @@ const salvarPedido = () => {
         </tr>
       </tfoot>
     </table>
-    <Button :disabled="salvo" v-if="!carregando" @click="salvarPedido" class="mt-2 botao-pedido bg-primary" label="Fechar pedido" />
+    <Button :disabled="salvo" v-if="!carregando" @click="salvarPedido" class="mt-2 botao-pedido" label="Fechar pedido" />
     <Message v-if="salvo" severity="success">
       <p>Pedido realizado com sucesso!</p>
       <p>Consulte seus itens em <NuxtLink to="/pedidos">Meus Pedidos</NuxtLink> </p>
@@ -139,10 +139,14 @@ $largura-tabela: 90vw;
   margin: 0;
   width: 100vw;
   min-height: calc(100vh - 80px);
-  background-color: rgb(0, 102, 255);
+  background-color: rgb(18, 15, 41);
+
   
   background-repeat: repeat;
   background-size: cover;
+}
+.text{
+  color: aliceblue;
 }
 
 table {
@@ -164,8 +168,8 @@ td {
 }
 
 .fotoProduto {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 
 Button {
@@ -180,12 +184,15 @@ Button {
 }
 
 .botao-pedido {
-  width: $largura-tabela;
-  height: 30px;
+  width: 150px;
+  height: 40px;
+  background-color: #50ab9e ;
+  color: aliceblue;
 
   &:hover {
     transform: scale(1.05);
     transition: 2s;
   }
 }
+
 </style>
