@@ -22,7 +22,7 @@ definePageMeta({
         signIn(credenciais, {redirect: false})
         .then(()=>{
             console.log("logado com sucesso .....");
-            navigateTo('/carrinho')
+            navigateTo('/emprestimo')
         })
         .catch((error)=>{
             console.error("error: ", error)

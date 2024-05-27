@@ -15,6 +15,12 @@ export type UsuarioCustomizado ={
 
 }
 
+export enum STATUS {
+    'PENDENTE' = "P",
+    'APROVADO' = "A",
+    'CANCELADO' = "C",
+}
+
 export type Livro ={
    id: number; 
    titulo: string;
@@ -28,5 +34,6 @@ export type Livro ={
    num_edicao: number;
    usuarioFK: UsuarioCustomizado
    ano: number;
+   status: STATUS;
 }
 

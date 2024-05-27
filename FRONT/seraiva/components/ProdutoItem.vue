@@ -27,14 +27,13 @@ console.log("produto recebido", props.livro);
                     <span>{{ props.livro.quantidade }}</span>
                 </div>                
             </div>
-            
-            <Button class="botao-add" label="Adicionar"/>
-            
-
+            <Rating v-model="props.livro.estrelas" readonly :cancel="false" />
+            <Button class="botao-add" label="não disponivel" :disabled="props.livro.quantidade === 0"/>
         </section>
 
     </div>
 </template>
+
 
 <style scoped lang="scss">
     .cartao{
