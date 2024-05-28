@@ -1,0 +1,5 @@
+https://uploadisabela-production.up.railway.app/
+https://upload-isabela.vercel.app/
+
+email: admin@admin.com
+senha: admin
