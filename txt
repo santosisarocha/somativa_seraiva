@@ -3,3 +3,9 @@ https://upload-isabela.vercel.app/
 
 email: admin@admin.com
 senha: admin
+
+email: bibliotecaria@seraiva.com
+senha: Biblio28
+
+email: usuario@seraiva.com
+senha: User1234
